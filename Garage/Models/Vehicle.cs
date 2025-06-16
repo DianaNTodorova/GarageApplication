@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Garage.Models
 {
-    internal abstract class Vehicle : IVehicle
+    internal class Vehicle : IVehicle
     {
         string Model { get; }
         string RegistrationNumber { get; }

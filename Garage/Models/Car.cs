@@ -8,7 +8,7 @@ namespace Garage.Models
 {
     internal class Car : Vehicle
     {
-        public Car(string model, string registrationNumber, string color, int wheels) : base(model, registrationNumber, color, 4)
+        public Car(string model, string registrationNumber, string color, int wheels) : base(model, registrationNumber, color, wheels)
         {
         }
 

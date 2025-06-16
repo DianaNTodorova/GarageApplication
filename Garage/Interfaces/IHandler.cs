@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Garage.Garage;
+using Garage.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,7 @@ namespace Garage.Interfaces
     {
         void CreateGarage();
         void RemoveVehicle();
-        void AddVehicle();
+        void AddVehicle(IVehicle vehicle);
 
 
 

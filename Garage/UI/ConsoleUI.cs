@@ -1,4 +1,6 @@
-﻿using Garage.Interfaces;
+﻿using Garage.Garage;
+using Garage.Interfaces;
+using Garage.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,7 @@ namespace Garage.UI
     {
         public void StartGarage()
         {
+            GarageHandler handler = new GarageHandler();
             while (true) 
             {
                 Console.WriteLine("Welcome to The City Parking ");
@@ -28,17 +31,20 @@ namespace Garage.UI
                         Console.WriteLine("Enter a car color");
                         string carColor=Console.ReadLine();
 
+                        handler.AddVehicle(new Car(carModel,registrationNumber,carColor,4));
 
                         break;
                     case "3":
                         break;
                     case "4":
+                        handler.ShowVehicles();
                         break;
                     case "5":
                         Console.WriteLine("Enter a registration number:");
                         string regNumber= Console.ReadLine().ToUpper();
                         break;
                     case "6":
+                        Environment.Exit(0);
                         break;
 
                 }

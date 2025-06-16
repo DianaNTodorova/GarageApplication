@@ -12,7 +12,7 @@ namespace Garage.Garage
 {
     internal class Garage<T> : IEnumerable<T> where T : IVehicle
     {
-        private T[] vehicle;
+        private T[] vehicle; //array
         private int count=0;
         private int capacity;
 
@@ -29,9 +29,12 @@ namespace Garage.Garage
             return GetEnumerator();
         }
 
-        public void Park(T t)
+        public string Park(T vehicle)
         {
+            if (capacity < count) return "garage is full";
 
+
+            return null;
         }
 
         public void UnPark(T t)
