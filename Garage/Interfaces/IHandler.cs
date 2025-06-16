@@ -8,5 +8,11 @@ namespace Garage.Interfaces
 {
     internal interface IHandler
     {
+        void CreateGarage();
+        void RemoveVehicle();
+        void AddVehicle();
+
+
+
     }
 }

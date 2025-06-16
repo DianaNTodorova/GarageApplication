@@ -21,6 +21,14 @@ namespace Garage.UI
                     case "1":
                         break;
                     case "2":
+                        Console.WriteLine("Enter a car model:");
+                        string carModel= Console.ReadLine();
+                        Console.WriteLine("Enter a registration number:");
+                        string registrationNumber= Console.ReadLine().ToUpper();
+                        Console.WriteLine("Enter a car color");
+                        string carColor=Console.ReadLine();
+
+
                         break;
                     case "3":
                         break;

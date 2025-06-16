@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Garage.Models
 {
-    internal class Car
+    internal class Car : Vehicle
     {
+        public Car(string model, string registrationNumber, string color, int wheels) : base(model, registrationNumber, color, 4)
+        {
+        }
+
+        public override void GetInfo()
+        {
+            base.GetInfo();
+        }
     }
 }
