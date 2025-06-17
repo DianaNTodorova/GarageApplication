@@ -8,13 +8,14 @@ namespace Garage.Models
 {
     internal class Car : Vehicle
     {
-        public Car(string model, string registrationNumber, string color, int wheels) : base(model, registrationNumber, color, wheels)
+        public Car(string model, string registrationNumber, string color) : base(model, registrationNumber, color, 4)
         {
+            
         }
 
         public override void GetInfo()
         {
-            Console.WriteLine($"The vehicle {Model} is with registration number: {RegistrationNumber}, color {Color} and wheels {Wheels}! ");
+            Console.WriteLine($"Car {Model} with registration number: {RegistrationNumber}, color {Color} and {Wheels} wheels! ");
         }
     }
 }

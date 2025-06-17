@@ -8,12 +8,13 @@ namespace Garage.Models
 {
     internal class Motorcycle : Vehicle
     {
-        public Motorcycle(string model, string registrationNumber, string color, int wheels) : base(model, registrationNumber, color, 2)
+        public Motorcycle(string model, string registrationNumber, string color) : base(model, registrationNumber, color, 2)
         {
+        
         }
         public override void GetInfo()
         {
-            base.GetInfo();
+            Console.WriteLine($"Motorcycle {Model} with registration number: {RegistrationNumber}, color {Color} and {Wheels} wheels! ");
         }
     }
 }
