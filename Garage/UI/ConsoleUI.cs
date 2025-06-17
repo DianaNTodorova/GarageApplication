@@ -36,6 +36,11 @@ namespace Garage.UI
 
                         break;
                     case "3":
+
+                        Console.WriteLine("To unpark please enter the registrerings number:");
+                        string regNumberInput= Console.ReadLine().ToUpper();
+                        handler.RemoveVehicle(regNumberInput);
+
                         break;
                     case "4":
                         handler.ShowVehicles();

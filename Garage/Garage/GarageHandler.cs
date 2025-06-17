@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,12 +12,12 @@ namespace Garage.Garage
 {
     internal class GarageHandler : IHandler
     {
-        private Garage<IVehicle> garage;
+        private Garage<IVehicle> garage = null!;
 
-        public GarageHandler(Garage<IVehicle> garage)
-        {
-            this.garage = garage;
-        }
+        //public GarageHandler(Garage<IVehicle> garage)
+        //{
+        //    this.garage = garage;
+        //}
 
         public bool AddVehicle(IVehicle vehicle)
         {
@@ -31,15 +32,27 @@ namespace Garage.Garage
 
         public void ShowVehicles()
         {
-            foreach (var vehicle in garage) // I am stuck here!
+            foreach (var vehicle in garage) 
             {
                 vehicle.GetInfo();
             }
         }
 
-        public bool RemoveVehicle()
+        public bool RemoveVehicle(string regNumber)
         {
-            throw new NotImplementedException();
+
+            IVehicle? found = garage.FirstOrDefault(v => v.RegistrationNumber == regNumber);
+
+            if (found != null)
+            {
+                garage.UnPark(found);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("The vehicle with this registration number is not found.");
+                return false;
+            }
         }
 
         public void CreateGarage()

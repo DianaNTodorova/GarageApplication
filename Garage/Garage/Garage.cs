@@ -25,6 +25,7 @@ namespace Garage.Garage
 
         public IEnumerator<T> GetEnumerator()
         {
+            //Only return vehicles not null!
             for (int i = 0; i < count; i++)
             {
                 yield return vehicles[i];
@@ -52,6 +53,7 @@ namespace Garage.Garage
 
         public bool UnPark(T vehicle)
         {
+
             vehicles[count--] = vehicle;
             Console.WriteLine($"The car with {vehicle.RegistrationNumber} is unparked!");
             return true;

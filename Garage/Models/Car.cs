@@ -14,7 +14,7 @@ namespace Garage.Models
 
         public override void GetInfo()
         {
-            Console.WriteLine($"The vehicle{Model} is with registration number{RegistrationNumber}, color{Color} and wheels{Wheels}! ");
+            Console.WriteLine($"The vehicle {Model} is with registration number: {RegistrationNumber}, color {Color} and wheels {Wheels}! ");
         }
     }
 }
