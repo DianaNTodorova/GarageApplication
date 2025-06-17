@@ -16,7 +16,7 @@ namespace Garage.UI
             GarageHandler handler = new GarageHandler();
             while (true) 
             {
-                Console.WriteLine("Welcome to The City Parking ");
+                Console.WriteLine("\nWelcome to The City Parking ");
                 Console.WriteLine("\nMake a choice:\n1. Create a new garage \n2. Park a car \n3. Leave the parking \n4. Show all vehicels \n5. Search for vehicle \n6. Exit!");
                 string choice= Console.ReadLine();
                 switch (choice)

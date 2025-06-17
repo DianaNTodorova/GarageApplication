@@ -55,7 +55,7 @@ namespace Garage.Garage
         {
 
             vehicles[count--] = vehicle;
-            Console.WriteLine($"The car with {vehicle.RegistrationNumber} is unparked!");
+            Console.WriteLine($"The car with {vehicle.RegistrationNumber} registration number is unparked!");
             return true;
         }
 

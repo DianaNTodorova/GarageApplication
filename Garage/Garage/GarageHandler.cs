@@ -46,7 +46,7 @@ namespace Garage.Garage
             || v.Model.Contains(input, StringComparison.OrdinalIgnoreCase));
             foreach (var vehicle in sortedByRef)
             {
-                Console.WriteLine($"Found \n Model: {vehicle.Model} \n Color: {vehicle.Color} \n Registration number: {vehicle.RegistrationNumber}");
+                Console.WriteLine($"- Found - \n Model: {vehicle.Model} \n Color: {vehicle.Color} \n Registration number: {vehicle.RegistrationNumber}");
             }
 
             if (!sortedByRef.Any())
