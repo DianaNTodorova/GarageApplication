@@ -46,8 +46,9 @@ namespace Garage.UI
                         handler.ShowVehicles();
                         break;
                     case "5":
-                        Console.WriteLine("Enter a registration number:");
-                        string regNumber= Console.ReadLine().ToUpper();
+                        Console.WriteLine("Search for vehicle by registration number/color/model");
+                        string input= Console.ReadLine();
+                        handler.Search(input);
                         break;
                     case "6":
                         Environment.Exit(0);
