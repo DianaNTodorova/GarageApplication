@@ -17,11 +17,12 @@ namespace Garage.UI
             while (true) 
             {
                 Console.WriteLine("Welcome to The City Parking ");
-                Console.WriteLine("\nMake a choice:\n1 Create a new garage \n2. Park a car \n3. Leave the parking \n4. Show all vehicels \n5. Search for vehicle \n6. Exit!");
+                Console.WriteLine("\nMake a choice:\n1. Create a new garage \n2. Park a car \n3. Leave the parking \n4. Show all vehicels \n5. Search for vehicle \n6. Exit!");
                 string choice= Console.ReadLine();
                 switch (choice)
                 {
                     case "1":
+                        handler.CreateGarage();
                         break;
                     case "2":
                         Console.WriteLine("Enter a car model:");

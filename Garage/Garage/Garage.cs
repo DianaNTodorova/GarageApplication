@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Quic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,15 +13,21 @@ namespace Garage.Garage
 {
     internal class Garage<T> : IEnumerable<T> where T : IVehicle
     {
-        private T[] vehicle; //array
+        private T[] vehicles; //array
         private int count=0;
         private int capacity;
+
+        public Garage(int capacity)
+        {
+            this.capacity = capacity;
+            vehicles = new T[capacity];
+        }
 
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < count; i++)
             {
-                yield return vehicle[i];
+                yield return vehicles[i];
             }
         }
 
@@ -29,16 +36,25 @@ namespace Garage.Garage
             return GetEnumerator();
         }
 
-        public string Park(T vehicle)
+        public bool Park(T vehicle)
         {
-            if (capacity < count) return "garage is full";
+            if (capacity <= count)
+            { return false; }
 
+            else
+            {
+                vehicles[count++] = vehicle;
+                Console.WriteLine($"The car with {vehicle.RegistrationNumber} registration number is parked!");
+                return true;
+            }
 
-            return null;
         }
 
-        public void UnPark(T t)
+        public bool UnPark(T vehicle)
         {
+            vehicles[count--] = vehicle;
+            Console.WriteLine($"The car with {vehicle.RegistrationNumber} is unparked!");
+            return true;
         }
 
     }

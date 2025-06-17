@@ -8,10 +8,10 @@ namespace Garage.Interfaces
 {
     internal interface IVehicle
     {
-        string Model { get; }
-        string RegistrationNumber { get; }
-        string Color { get; }
-        int Wheels { get; }
+        public string Model { get; }
+        public string RegistrationNumber { get; }
+        public string Color { get; }
+        public int Wheels { get; }
 
         void GetInfo();
 

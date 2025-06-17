@@ -11,8 +11,8 @@ namespace Garage.Interfaces
     internal interface IHandler
     {
         void CreateGarage();
-        void RemoveVehicle();
-        void AddVehicle(IVehicle vehicle);
+        bool RemoveVehicle();
+        bool AddVehicle(IVehicle vehicle);
 
 
 

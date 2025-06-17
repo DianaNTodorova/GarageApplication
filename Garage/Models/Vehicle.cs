@@ -9,11 +9,11 @@ namespace Garage.Models
 {
     internal class Vehicle : IVehicle
     {
-        string Model { get; }
-        string RegistrationNumber { get; }
-        string Color { get; }
+        public string Model { get; }
+        public string RegistrationNumber { get; }
+        public string Color { get; }
 
-        int Wheels { get; }
+        public int Wheels { get; }
 
         string IVehicle.Model => Model;
 

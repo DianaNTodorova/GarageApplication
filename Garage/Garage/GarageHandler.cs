@@ -11,29 +11,47 @@ namespace Garage.Garage
 {
     internal class GarageHandler : IHandler
     {
-        Garage<IVehicle> garage= new Garage<IVehicle>(); //the array
-        public void AddVehicle(IVehicle vehicle)
+        private Garage<IVehicle> garage;
+        public bool AddVehicle(IVehicle vehicle)
         {
-            garage.Park(vehicle);
-            //garage.Where(p=>p)
+            if (garage is null)
+            {
+                Console.WriteLine("Please create a garage first.");
+                return false;
+            }
+            return garage.Park(vehicle);
+           
         }
 
         public void ShowVehicles()
         {
+
+
+           
+
             foreach (var vehicle in garage)
             {
-                Console.WriteLine(vehicle);
+                vehicle.GetInfo();
             }
         }
 
-        public void RemoveVehicle()
+        public bool RemoveVehicle()
         {
             throw new NotImplementedException();
         }
 
         public void CreateGarage()
-        {        
-            throw new NotImplementedException();
+        {
+            Console.Write("Enter garage capacity: ");
+            if (int.TryParse(Console.ReadLine(), out int capacity))
+            {
+                garage = new Garage<IVehicle>(capacity);
+                Console.WriteLine($"Garage created with capacity {capacity}.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a number.");
+            }
         }
     }
 }
