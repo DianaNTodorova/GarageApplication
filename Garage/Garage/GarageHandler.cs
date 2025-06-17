@@ -12,6 +12,12 @@ namespace Garage.Garage
     internal class GarageHandler : IHandler
     {
         private Garage<IVehicle> garage;
+
+        public GarageHandler(Garage<IVehicle> garage)
+        {
+            this.garage = garage;
+        }
+
         public bool AddVehicle(IVehicle vehicle)
         {
             if (garage is null)
@@ -25,11 +31,7 @@ namespace Garage.Garage
 
         public void ShowVehicles()
         {
-
-
-           
-
-            foreach (var vehicle in garage)
+            foreach (var vehicle in garage) // I am stuck here!
             {
                 vehicle.GetInfo();
             }
