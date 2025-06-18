@@ -27,8 +27,12 @@ namespace Garage.Garage
                 Console.WriteLine("Please create a garage first.");
                 return false;
             }
+            
+            bool checkExist=garage.Any(v=>v.RegistrationNumber == vehicle.RegistrationNumber);
+            if (checkExist) 
+            { Console.WriteLine("The vehicle with this registration number already exist"); return false; }
+            ;
             return garage.Park(vehicle);
-           
         }
 
         public void ShowVehicles()

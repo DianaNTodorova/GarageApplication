@@ -53,11 +53,20 @@ namespace Garage.Garage
 
         public bool UnPark(T vehicle)
         {
+            int index = Array.FindIndex(vehicles, 0, count, v => v != null && v.RegistrationNumber == vehicle.RegistrationNumber);
 
-            vehicles[count--] = vehicle;
+            if (index == -1)
+            {
+                Console.WriteLine("Vehicle not found.");
+                return false;
+            }
+
+
+            vehicles[index] = default!;
             Console.WriteLine($"The car with {vehicle.RegistrationNumber} registration number is unparked!");
             return true;
         }
+
 
     }
 }

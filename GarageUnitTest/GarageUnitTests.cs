@@ -15,7 +15,7 @@ namespace GarageUnitTest
             var car = new Car("Citroen", "OUA080", "white"); //simulate the creation of  a car
 
             //Act
-            var test=handler.AddVehicle(car);
+            var test = handler.AddVehicle(car);
             //Assert
             Assert.True(test);
         }
@@ -35,5 +35,6 @@ namespace GarageUnitTest
             //Assert
             Assert.True(testRemove);
         }
+
     }
 }
