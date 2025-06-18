@@ -15,7 +15,5 @@ namespace Garage.Interfaces
 
         void GetInfo();
 
-
-
     }
 }

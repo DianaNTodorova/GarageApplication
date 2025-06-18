@@ -34,6 +34,9 @@ namespace Garage.UI
                         SearchVehicle();
                         break;
                     case "6":
+                        AdvancedSearchVehicle();
+                        break;
+                    case "7":
                         Console.WriteLine("Exiting...");
                         Environment.Exit(0);
                         break;
@@ -44,6 +47,7 @@ namespace Garage.UI
             }
         }
 
+
         private void PrintMenu()
         {
             Console.WriteLine("\nWelcome to The City Parking");
@@ -53,7 +57,8 @@ namespace Garage.UI
             Console.WriteLine("3. Leave the parking");
             Console.WriteLine("4. Show all vehicles");
             Console.WriteLine("5. Search for vehicle");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("6. Advanced Search for vehicle");
+            Console.WriteLine("7. Exit");
         }
 
         private void CreateGarage()
@@ -74,6 +79,8 @@ namespace Garage.UI
             Console.WriteLine("Select vehicle type to park:");
             Console.WriteLine("1. Car");
             Console.WriteLine("2. Motorcycle");
+            Console.WriteLine("3. Bus");
+            Console.WriteLine("4. Airplane");
             string typeChoice = Console.ReadLine()?.Trim();
 
             Console.Write("Enter model: ");
@@ -92,6 +99,16 @@ namespace Garage.UI
                     break;
                 case "2":
                     handler.AddVehicle(new Motorcycle(model, regNumber, color));
+                    break;
+                case "3":
+                    Console.Write("Enter number of seats: ");
+                    int numberOfSeats = int.Parse(Console.ReadLine());
+                    handler.AddVehicle(new Bus(model, regNumber, color, numberOfSeats));
+                    break;
+                case "4":
+                    Console.Write("Enter number of engines: ");
+                    int numberOfEngines = int.Parse(Console.ReadLine());
+                    handler.AddVehicle(new Bus(model, regNumber, color, numberOfEngines));
                     break;
                 default:
                     Console.WriteLine("Invalid vehicle type.");
@@ -116,5 +133,30 @@ namespace Garage.UI
             string input = Console.ReadLine();
             handler.Search(input);
         }
+        private void AdvancedSearchVehicle()
+        {
+            Console.WriteLine("Search vehicle by model (or press enter to skip);");
+            string inputModel = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(inputModel)) inputModel = null;
+
+            Console.WriteLine("Search vehicle by color (or press enter to skip);");
+            string inputColor = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(inputColor)) inputColor = null;
+
+            Console.WriteLine("Search vehicle by registration number (or press enter to skip);");
+            string inputRegNumber = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(inputRegNumber)) inputRegNumber = null;
+
+            Console.WriteLine("Search vehicle by number of engines (or press enter to skip);");
+            int? inputNumberEngines = int.TryParse(Console.ReadLine(), out int resultEngine) ? resultEngine : null;
+
+            Console.WriteLine("Search vehicle by number of seats (or press enter to skip);");
+            int? inputNumberSeats = int.TryParse(Console.ReadLine(), out int resultSeat) ? resultSeat : null;
+
+            handler.AdvancedSearch(inputModel, inputColor, inputRegNumber, inputNumberEngines, inputNumberSeats);
+
+        }
+
+
     }
 }

@@ -45,7 +45,7 @@ namespace Garage.Garage
             else
             {
                 vehicles[count++] = vehicle;
-                Console.WriteLine($"The car with {vehicle.RegistrationNumber} registration number is parked!");
+                Console.WriteLine($"The vehicle with {vehicle.RegistrationNumber} registration number is parked!");
                 return true;
             }
 
@@ -63,7 +63,7 @@ namespace Garage.Garage
 
 
             vehicles[index] = default!;
-            Console.WriteLine($"The car with {vehicle.RegistrationNumber} registration number is unparked!");
+            Console.WriteLine($"The vehicle with {vehicle.RegistrationNumber} registration number is unparked!");
             return true;
         }
 
