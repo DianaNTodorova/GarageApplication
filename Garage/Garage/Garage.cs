@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Garage.Garage
 {
-    internal class Garage<T> : IEnumerable<T> where T : IVehicle
+    public class Garage<T> : IEnumerable<T> where T : IVehicle
     {
         private T[] vehicles; //array
         private int count=0;

@@ -58,7 +58,15 @@ namespace Garage.UI
 
         private void CreateGarage()
         {
-            handler.CreateGarage();
+            Console.Write("Enter garage capacity: ");
+            if (int.TryParse(Console.ReadLine(), out int capacity))
+            {
+                handler.CreateGarage(capacity);
+            }
+            else
+            {
+                Console.WriteLine("Invalid number. Please try again.");
+            }
         }
 
         private void ParkVehicle()

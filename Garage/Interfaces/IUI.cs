@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Garage.Interfaces
 {
-    internal interface IUI
+    public interface IUI
     {
         void StartGarage();
     }

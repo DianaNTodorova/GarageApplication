@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Garage.Garage
 {
-    internal class GarageHandler : IHandler
+    public class GarageHandler : IHandler
     {
         private Garage<IVehicle> garage = null!;
 
@@ -74,18 +74,14 @@ namespace Garage.Garage
             }
         }
 
-        public void CreateGarage()
+        public void CreateGarage(int capacity)
         {
-            Console.Write("Enter garage capacity: ");
-            if (int.TryParse(Console.ReadLine(), out int capacity))
-            {
-                garage = new Garage<IVehicle>(capacity);
-                Console.WriteLine($"Garage created with capacity {capacity}.");
-            }
-            else
-            {
-                Console.WriteLine("Invalid input. Please enter a number.");
-            }
+          
+            garage = new Garage<IVehicle>(capacity); 
+            Console.WriteLine($"Garage created with capacity {capacity}.");
+          
         }
+
+
     }
 }

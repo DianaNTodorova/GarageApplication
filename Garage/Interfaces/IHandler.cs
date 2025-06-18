@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Garage.Interfaces
 {
-    internal interface IHandler
+    public interface IHandler
     {
-        void CreateGarage();
+        void CreateGarage(int capacity);
         bool RemoveVehicle(string regNumber);
         bool AddVehicle(IVehicle vehicle);
 

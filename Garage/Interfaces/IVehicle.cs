@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Garage.Interfaces
 {
-    internal interface IVehicle
+    public interface IVehicle
     {
         public string Model { get; }
         public string RegistrationNumber { get; }
