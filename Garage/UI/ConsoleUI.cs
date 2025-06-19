@@ -108,7 +108,7 @@ namespace Garage.UI
                 case "4":
                     Console.Write("Enter number of engines: ");
                     int numberOfEngines = int.Parse(Console.ReadLine());
-                    handler.AddVehicle(new Bus(model, regNumber, color, numberOfEngines));
+                    handler.AddVehicle(new Airplane(model, regNumber, color, numberOfEngines));
                     break;
                 default:
                     Console.WriteLine("Invalid vehicle type.");

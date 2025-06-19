@@ -82,18 +82,18 @@ namespace Garage.Garage
         public void AdvancedSearch(string? model = null, string? color = null, string? regNumber = null, int? numberOfEngines = null, int? numberOfSeats = null)
         {
             var filter = garage.Where(v =>
-                (model == null || v.Model.Equals(model, StringComparison.OrdinalIgnoreCase)) &&
-                (color == null || v.Color.Equals(color, StringComparison.OrdinalIgnoreCase)) &&
-                (regNumber == null || v.RegistrationNumber.Equals(regNumber, StringComparison.OrdinalIgnoreCase)) &&
-                (
-                    numberOfSeats == null ||
-                    (v is Bus bus && bus.NumberOfSeats == numberOfSeats)
-                ) &&
-                (
-                    numberOfEngines == null ||
-                    (v is Airplane plane && plane.NumberOfEngines == numberOfEngines)
-                )
-            );
+        (model == null || v.Model.Equals(model, StringComparison.OrdinalIgnoreCase)) &&
+        (color == null || v.Color.Equals(color, StringComparison.OrdinalIgnoreCase)) &&
+        (regNumber == null || v.RegistrationNumber.Equals(regNumber, StringComparison.OrdinalIgnoreCase)) &&
+        (
+            numberOfSeats == null ||
+            (v is Bus bus && bus.NumberOfSeats == numberOfSeats)
+        ) &&
+        (
+            numberOfEngines == null ||
+            (v is Airplane plane && plane.NumberOfEngines == numberOfEngines)
+        )
+    );
 
             if (!filter.Any())
             {

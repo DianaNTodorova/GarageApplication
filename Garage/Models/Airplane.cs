@@ -17,7 +17,7 @@ namespace Garage.Models
 
         public override void GetInfo()
         {
-            Console.WriteLine($"Airplane {Model} with registration number: {RegistrationNumber}, color {Color}, {Wheels} wheels and number of engines {NumberOfEngines}! ");
+            Console.WriteLine($"Airplane {Model} with registration number: {RegistrationNumber}, color {Color}, and number of engines {NumberOfEngines}! ");
         }
     }
 }
